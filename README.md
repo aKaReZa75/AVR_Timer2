@@ -40,6 +40,9 @@ Timer2 is an 8-bit timer/counter peripheral in the ATmega328P microcontroller, c
 > The resources are detailed in the sections below.  
 > To access any of them, simply click on the corresponding blue link.
 
+> [!CAUTION]
+> This tutorial has not yet **started!**
+
 
 # 💻 How to Use Git and GitHub
 To access the repository files and save them on your computer, there are two methods available:
