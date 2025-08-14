@@ -36,9 +36,85 @@ Timer2 is an 8-bit timer/counter peripheral in the ATmega328P microcontroller, c
 # 🔗 Resources
   Here you'll find a collection of useful links and videos related to the topic of AVR microcontrollers.  
   
+```
+TIMER2 Overview
+├── Documentation
+│   ├─ [TIMER2 Modes]
+│   │   ├─ Registers — TCCR2A, TCCR2B (WGM bits)
+│   │   ├─ Modes — Normal, CTC, Fast PWM, Phase Correct PWM
+│   │   └─ Examples — Mode switching and timing behavior
+│   │
+│   ├─ [TIMER2 Prescaler]
+│   │   ├─ Register — TCCR2B (CS22:0)
+│   │   ├─ Prescaler — Clock division and timer speed
+│   │   └─ Effects — Impact on overflow and resolution
+│   │
+│   ├─ [TIMER2 Interrupts]
+│   │   ├─ Registers — TIMSK2, TIFR2
+│   │   ├─ Sources — Overflow, Compare Match A/B
+│   │   └─ Control — Enable, flag clear, and ISR guide
+│   │
+│   ├─ [TIMER2 Outputs]
+│   │   ├─ Registers — TCCR2A (COM bits), OC2A/B
+│   │   ├─ Modes — Toggle, Clear, Set (normal/inverting)
+│   │   └─ Usage — External output waveforms
+│   │
+│   ├─ [TIMER2 Other Registers]
+│   │   ├─ TCNT2 — Timer/counter value
+│   │   ├─ OCR2A — Compare match A value
+│   │   └─ OCR2B — Compare match B value
+│   │
+│   ├─ [TIMER2 Time Calculation]
+│   │   ├─ Inputs — TCNT2, OCR2A, prescaler
+│   │   └─ Output — Overflow and match intervals
+│   │
+│   └─ [TIMER2 PWM Calculation]
+│       ├─ Modes — Fast PWM, Phase Correct
+│       └─ Math — PWM frequency and duty cycle
+│
+└── Registers
+    ├─ [TCCR2A]  — Output Compare behavior & Waveform Generation Mode (Part 1)
+    ├─ [TCCR2B]  — Clock Source selection, Prescaler setting & WGM bits (Part 2)
+    ├─ [TCNT2]   — Timer/Counter register — Holds current timer count
+    ├─ [OCR2A]   — Output Compare Register A — Match value for Channel A
+    ├─ [OCR2B]   — Output Compare Register B — Match value for Channel B
+    ├─ [TIMSK2]  — Interrupt Mask Register — Enable Timer2 interrupts
+    └─ [TIFR2]   — Interrupt Flag Register — Indicates interrupt events
+```  
+  
 > [!TIP]
 > The resources are detailed in the sections below.  
 > To access any of them, simply click on the corresponding blue link.
+
+
+- [TIMER2 Modes](./TIMER2_Modes.md)  
+  ---  
+  This document provides a detailed overview of all waveform generation modes of Timer2, including Normal, CTC, Fast PWM, and Phase Correct PWM. It explains how to configure the WGM bits in `TCCR2A` and `TCCR2B`, with practical examples of mode switching and timing behavior.
+
+- [TIMER2 Prescaler](./TIMER2_Prescaler.md)  
+  ---  
+  This document explains how to configure the clock source and prescaler for Timer2 using the `CS22:0` bits in `TCCR2B`. It includes all available prescaler options (including asynchronous clocking via external crystal) and their impact on timer resolution and overflow frequency.
+
+- [TIMER2 Interrupts](./TIMER2_Interrupts.md)  
+  ---  
+  This file covers all interrupt-related features of Timer2 such as overflow and compare match A/B interrupts. It explains how to enable them using `TIMSK2`, monitor flags in `TIFR2`, and implement proper ISR routines.
+
+- [TIMER2 Outputs](./TIMER2_Outputs.md)  
+  ---  
+  This document explains Compare Output Modes and how they affect the OC2A and OC2B pins in different timer modes. It includes configuration examples for toggle, clear, and set modes, both inverting and non-inverting.
+
+- [TIMER2 Other Registers](./TIMER2_OtherRegisters.md)  
+  ---  
+  This file provides a detailed description of Timer2 data and compare registers: `TCNT2`, `OCR2A`, and `OCR2B`. It explains their roles in timing and compare match operations, with bit-level insights.
+
+- [TIMER2 Time Calculation](./TIMER2_Time_Calc.md)  
+  ---  
+  This document helps calculate overflow time and compare match intervals in Normal and CTC modes based on prescaler and system clock. It includes formulas and examples tailored to Timer2's 8-bit resolution.
+
+- [TIMER2 PWM Calculation](./TIMER2_PWM_Calc.md)  
+  ---  
+  This file shows how to calculate PWM frequency and duty cycle for Timer2 in Fast PWM and Phase Correct PWM modes. It explains how `OCR2A` can be used as TOP and how prescaler settings affect output waveform characteristics.
+
 
 > [!CAUTION]
 > This tutorial has not yet **started!**
